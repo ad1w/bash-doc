@@ -7,25 +7,54 @@ some tips on bash shell. Just a personal documentation
 ```
 for example:
 ```
-~ $ Cantarel Bold 14
+~ $ cat text.txt
+Cantarel Bold 14
 
 to get "Cantarel 14" you can use:
-~ $ sed 's/Bold //'
-
-the result will be:
-~ $ Cantarel 14
+~ $ cat text.txt | sed 's/Bold //'
+Cantarel 14
 ```
+
 ## get character separated by something
 ```
 ~ $ cut -d 'something' -f column
 ```
 for example:
 ```
-~ $ gtk-font-name=Cantarel, 14
+~ $ cat text.txt
+gtk-font-name=Cantarel, 14
 
 to get "Cantarel, 14" you can use:
-~ $ cut -d '=' -f 2
+~ $ cat text.txt | cut -d '=' -f 2
+Cantarel, 14
+```
 
-the result will be:
-~ $ Cantarel, 14
+## get characters on a specific line
+```
+~ $ awk 'NR==linenumber'
+```
+for example:
+```
+~ $ cat text.txt
+ABCD
+EFGH
+IJKL
+
+to get "EFGH" you can use:
+~ $ cat text.txt | awk 'NR==2'
+EFGH
+```
+
+## get characters on a specific column
+```
+~ $ awk '{print $numbercolumn}'
+```
+for example:
+```
+~ $ cat text.txt
+ABCD EFGH IJKL
+
+to get "EFGH" you can use:
+~ $ cat text.txt | awk '{print $2}'
+EFGH
 ```
