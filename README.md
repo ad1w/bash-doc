@@ -64,7 +64,7 @@ EFGH
 export PATH="${PATH}:/location"
 ```
 for example:
-you want to add some files on your <i>script</i> directory, you can add this line in your bash script
+you want to add some files on your ```script``` directory, you can add this line in your bash script
 ```
 #!/bin/bash
 export PATH="${PATH}:/script"
@@ -77,7 +77,7 @@ cat <<EOF
 character
 EOF
 ```
-for example, you can create a new file (ex: text.txt) then you add this line:
+for example, you can create a new file ```text.txt``` then you add this line:
 ```
 #!/bin/bash
 cat <<EOF
@@ -93,7 +93,7 @@ Hello World
 ```
 tput setaf <0-15>
 ```
-for example, you can create a new file (ex: text.txt) then you add this line:
+for example, you can create a new file ```text.txt``` then you add this line:
 ```
 #!/bin/bash
 # Add colors
