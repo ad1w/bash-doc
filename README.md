@@ -3,7 +3,7 @@ some tips on bash shell. Just a personal documentation
 
 ## remove  character
 ```
-~ $ sed 's/character //'
+sed 's/character //'
 ```
 for example:
 ```
@@ -17,7 +17,7 @@ Cantarel 14
 
 ## get character separated by something
 ```
-~ $ cut -d 'something' -f column
+cut -d 'something' -f column
 ```
 for example:
 ```
@@ -31,7 +31,7 @@ Cantarel, 14
 
 ## get characters on a specific line
 ```
-~ $ awk 'NR==linenumber'
+awk 'NR==linenumber'
 ```
 for example:
 ```
@@ -47,7 +47,7 @@ EFGH
 
 ## get characters on a specific column
 ```
-~ $ awk '{print $numbercolumn}'
+awk '{print $numbercolumn}'
 ```
 for example:
 ```
@@ -57,4 +57,15 @@ ABCD EFGH IJKL
 to get "EFGH" you can use:
 ~ $ cat text.txt | awk '{print $2}'
 EFGH
+```
+
+## add file or directory on bash script
+```
+export PATH="${PATH}:/location"
+```
+for example:
+you want to add some files on your script directory, you can add this line in your bash script
+```
+#!/bin/bash
+export PATH="${PATH}:/script"
 ```
