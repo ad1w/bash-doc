@@ -1,7 +1,7 @@
-# bash-tips
-some tips on bash shell. Just a personal documentation
+# BASH tips
+Some tips on bash shell. Just a personal documentation
 
-## remove  character
+## Remove  character
 ```
 sed 's/character //'
 ```
@@ -15,7 +15,7 @@ to get "Cantarel 14" you can use:
 Cantarel 14
 ```
 
-## get character separated by something
+## Get character separated by something
 ```
 cut -d 'something' -f column
 ```
@@ -29,7 +29,7 @@ to get "Cantarel, 14" you can use:
 Cantarel, 14
 ```
 
-## get characters on a specific line
+## Get characters on a specific line
 ```
 awk 'NR==linenumber'
 ```
@@ -45,7 +45,7 @@ to get "EFGH" you can use:
 EFGH
 ```
 
-## get characters on a specific column
+## Get characters on a specific column
 ```
 awk '{print $numbercolumn}'
 ```
@@ -59,7 +59,7 @@ to get "EFGH" you can use:
 EFGH
 ```
 
-## add file or directory on bash script
+## Add file or directory on bash script
 ```
 export PATH="${PATH}:/location"
 ```
@@ -89,7 +89,7 @@ then if you run, the result will be:
 Hello World
 ```
 
-## add the colors
+## Add the colors
 ```
 tput setaf <0-15>
 ```
