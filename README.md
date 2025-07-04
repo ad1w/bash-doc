@@ -64,8 +64,64 @@ EFGH
 export PATH="${PATH}:/location"
 ```
 for example:
-you want to add some files on your script directory, you can add this line in your bash script
+you want to add some files on your <i>script</i> directory, you can add this line in your bash script
 ```
 #!/bin/bash
 export PATH="${PATH}:/script"
+```
+
+## Print character on bash script
+```
+#!/bin/bash
+cat <<EOF
+character
+EOF
+```
+for example, you can create a new file (ex: text.txt) then you add this line:
+```
+#!/bin/bash
+cat <<EOF
+Hello World
+EOF
+
+then if you run, the result will be:
+~ $ bash text.txt
+Hello World
+```
+
+## add the colors
+```
+tput setaf <0-15>
+```
+for example, you can create a new file (ex: text.txt) then you add this line:
+```
+#!/bin/bash
+# Add colors
+#normal
+bla=$(tput setaf 0)
+red=$(tput setaf 1)
+gre=$(tput setaf 2)
+yel=$(tput setaf 3)
+blu=$(tput setaf 4)
+mag=$(tput setaf 5)
+cya=$(tput setaf 6)
+whi=$(tput setaf 7)
+#bright
+bbla=$(tput setaf 8)
+bred=$(tput setaf 9)
+bgre=$(tput setaf 10)
+byel=$(tput setaf 11)
+bblu=$(tput setaf 12)
+bmag=$(tput setaf 13)
+bcya=$(tput setaf 14)
+bwhi=$(tput setaf 15)
+
+# Print result
+cat <<EOF
+$redHello World
+EOF
+
+then if you run, the result will be:
+~ $ bash text.txt
+Hello World (with red color)
 ```
