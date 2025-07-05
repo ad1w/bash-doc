@@ -125,3 +125,32 @@ then if you run, the result will be:
 ~ $ bash text.txt
 Hello World (with red color)
 ```
+
+## Add value option on bash
+```
+if [[ $1 = "value" ]]; then
+  action
+else
+  action
+fi
+```
+for example, in your ```text.txt``` you can add this line:
+```
+#!/bin/bash
+val_1=Hello World
+val_2=Hello There
+
+if [[ $1 = "-1" ]]; then
+  echo "$(val_1)"
+else
+  echo "$(val_2)"
+fi
+
+then if you run with "-1", the result will be:
+~ $ bash text.txt -1
+Hello World
+
+if you run without "-1", the result will be:
+~ $ bash text.txt
+Hello There
+```
