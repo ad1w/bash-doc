@@ -154,3 +154,30 @@ if you run without "-1", the result will be:
 ~ $ bash text.txt
 Hello There
 ```
+
+## Add value option (number) on bash
+```
+if [[ $1 =~ ^[0-9]+$ ]]; then
+  action
+else
+  action
+fi
+```
+for example, in your ```text.txt``` you can add this line:
+```
+#!/bin/bash
+
+if [[ $1 =~ ^[0-9]+$ ]]; then
+  echo "the value is" $1
+else
+  echo "the value is -"  
+fi
+
+then if you run with "number", the result will be:
+~ $ bash text.txt 9379
+the value is 9379
+
+if you run with "character", the result will be:
+~ $ bash text.txt abcd
+the value is -
+```
