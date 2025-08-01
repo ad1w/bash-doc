@@ -83,8 +83,9 @@ for example, you can create a new file ```text.txt``` then you add this line:
 cat <<EOF
 Hello World
 EOF
-
+```
 then if you run, the result will be:
+```
 ~ $ bash text.txt
 Hello World
 ```
@@ -120,8 +121,9 @@ bwhi=$(tput setaf 15)
 cat <<EOF
 $redHello World
 EOF
-
+```
 then if you run, the result will be:
+```
 ~ $ bash text.txt
 Hello World (with red color)
 ```
@@ -145,12 +147,14 @@ if [[ $1 = "-1" ]]; then
 else
   echo "$(val_2)"
 fi
-
+```
 then if you run with "-1", the result will be:
+```
 ~ $ bash text.txt -1
 Hello World
-
+```
 if you run without "-1", the result will be:
+```
 ~ $ bash text.txt
 Hello There
 ```
@@ -172,12 +176,32 @@ if [[ $1 =~ ^[0-9]+$ ]]; then
 else
   echo "the value is -"  
 fi
-
+```
 then if you run with "number", the result will be:
+```
 ~ $ bash text.txt 9379
 the value is 9379
-
+```
 if you run with "character", the result will be:
+```
 ~ $ bash text.txt abcd
 the value is -
+```
+
+## Arithmetic operations
+```
+eq=$(($1+$2))
+echo $1 + $2 = $eq
+```
+for example, in your ```test.txt``` you can add this line:
+```
+#!/bin/bash
+
+eq=$(($1+$2))
+echo $1 + $2 = $eq
+```
+then if you run, the result will be:
+```
+~ $ bash test.txt 10 7
+10 + 7 = 17
 ```
